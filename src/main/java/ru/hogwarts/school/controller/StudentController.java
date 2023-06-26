@@ -1,12 +1,10 @@
 package ru.hogwarts.school.controller;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.hogwarts.school.model.Student;
+import ru.hogwarts.school.dto.StudentDtoIn;
+import ru.hogwarts.school.dto.StudentDtoOut;
 import ru.hogwarts.school.service.StudentService;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -19,28 +17,28 @@ public class StudentController {
     }
 
     @PostMapping
-    public Student addStudent(@RequestBody Student student) {
-        return studentService.addStudent(student);
+    public StudentDtoOut addStudent(@RequestBody StudentDtoIn studentDtoIn) {
+        return studentService.addStudent(studentDtoIn);
     }
 
     @GetMapping("{id}")
-    public Student findStudent(@PathVariable("id") long id) {
+    public StudentDtoOut findStudent(@PathVariable("id") long id) {
         return studentService.findStudent(id);
     }
 
     @PutMapping
-    public Student editStudent(@PathVariable("id") long id, @RequestBody Student student) {
-        return studentService.editStudent(id, student);
+    public StudentDtoOut editStudent(@PathVariable("id") long id, @RequestBody StudentDtoIn studentDtoIn) {
+        return studentService.editStudent(id, studentDtoIn);
 
     }
 
     @DeleteMapping("{id}")
-    public Student deleteStudent(@PathVariable("id") long id) {
+    public StudentDtoOut deleteStudent(@PathVariable("id") long id) {
         return studentService.deleteStudent(id);
     }
 
     @GetMapping
-    public List<Student> findByAge(@RequestParam(required = false) Integer age) {
+    public List<StudentDtoOut> findByAge(@RequestParam(required = false) Integer age) {
         return studentService.findByAge(age);
     }
 }
