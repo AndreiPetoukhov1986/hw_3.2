@@ -1,19 +1,19 @@
 package ru.hogwarts.school.dto;
 
 public class FacultyDtoOut {
-    private long id;
+    private Long id;
     private String name;
     private String color;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public FacultyDtoOut(long id, String name, String color) {
+    public FacultyDtoOut(Long id, String name, String color) {
         this.id=id;
         this.name = name;
         this.color = color;
