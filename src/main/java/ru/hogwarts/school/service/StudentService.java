@@ -29,7 +29,7 @@ public class StudentService {
                         studentMapper.toEntity(studentDtoIn)));
     }
 
-    public StudentDtoOut findStudent(long id) {
+    public StudentDtoOut findStudent(Long id) {
         return studentRepository.findById(id)
                 .map(studentMapper::toDto)
                 .orElseThrow(() -> new StudentNotFoundException(id));
@@ -45,7 +45,7 @@ public class StudentService {
                 .orElseThrow(() -> new FacultyNotFoundException(id));
     }
 
-    public StudentDtoOut deleteStudent(long id) {
+    public StudentDtoOut deleteStudent(Long id) {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new StudentNotFoundException(id));
         studentRepository.delete(student);

@@ -28,7 +28,7 @@ public class FacultyService {
                         facultyMapper.toEntity(facultyDtoIn)));
     }
 
-    public FacultyDtoOut findFaculty(long id) {
+    public FacultyDtoOut findFaculty(Long id) {
         return facultyRepository.findById(id)
                 .map(facultyMapper::toDto)
                 .orElseThrow(() -> new FacultyNotFoundException(id));
@@ -44,7 +44,7 @@ public class FacultyService {
                 .orElseThrow(() -> new FacultyNotFoundException(id));
     }
 
-    public FacultyDtoOut deleteFaculty(long id) {
+    public FacultyDtoOut deleteFaculty(Long id) {
         Faculty faculty = facultyRepository.findById(id)
                 .orElseThrow(() -> new FacultyNotFoundException(id));
         facultyRepository.delete(faculty);
