@@ -22,18 +22,18 @@ public class StudentController {
     }
 
     @GetMapping("{id}")
-    public StudentDtoOut findStudent(@PathVariable("id") Long id) {
+    public StudentDtoOut findStudent(@PathVariable("id") long id) {
         return studentService.findStudent(id);
     }
 
     @PutMapping
-    public StudentDtoOut editStudent(@PathVariable("id") Long id, @RequestBody StudentDtoIn studentDtoIn) {
+    public StudentDtoOut editStudent(@PathVariable("id") long id, @RequestBody StudentDtoIn studentDtoIn) {
         return studentService.editStudent(id, studentDtoIn);
 
     }
 
     @DeleteMapping("{id}")
-    public StudentDtoOut deleteStudent(@PathVariable("id") Long id) {
+    public StudentDtoOut deleteStudent(@PathVariable("id") long id) {
         return studentService.deleteStudent(id);
     }
 

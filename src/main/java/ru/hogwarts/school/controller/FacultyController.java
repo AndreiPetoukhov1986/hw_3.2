@@ -22,17 +22,17 @@ public class FacultyController {
     }
 
     @GetMapping("{id}")
-    public FacultyDtoOut findFaculty(@PathVariable("id") Long id) {
+    public FacultyDtoOut findFaculty(@PathVariable("id") long id) {
         return facultyService.findFaculty(id);
     }
 
     @PutMapping
-    public FacultyDtoOut editFaculty(@PathVariable("id") Long id, @RequestBody FacultyDtoIn facultyDtoIn) {
+    public FacultyDtoOut editFaculty(@PathVariable("id") long id, @RequestBody FacultyDtoIn facultyDtoIn) {
         return facultyService.editFaculty(id, facultyDtoIn);
     }
 
     @DeleteMapping("{id}")
-    public FacultyDtoOut deleteFaculty(@PathVariable("id") Long id) {
+    public FacultyDtoOut deleteFaculty(@PathVariable("id") long id) {
         return facultyService.deleteFaculty(id);
     }
 
